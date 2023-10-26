@@ -5,69 +5,73 @@
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+# Schedule Mail
 
-## Description
+Este projeto foi construído com o [NestJs](https://github.com/nestjs/nest), um framework eficiente e poderoso para Node.js. Ele utiliza a API externa do SendGrid para enviar e-mails e a biblioteca Schedule para agendar o envio de e-mails utilizando o cron.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Pré-requisitos
 
-## Installation
+Antes de executar este projeto, certifique-se de ter o seguinte:
+
+- Node.js instalado em sua máquina
+- Credenciais da API do SendGrid (chave da API, e-mail remetente, etc.)
+
+## Instalação
+
+1. Clone o repositório do projeto no GitHub.
+2. Navegue até o diretório do projeto.
+3. Execute o seguinte comando para instalar as dependências:
 
 ```bash
 $ pnpm install
 ```
 
-## Running the app
+## Rodar o servidor
 
 ```bash
-# development
+# desenvolvimento
 $ pnpm run start
 
-# watch mode
+# observação
 $ pnpm run start:dev
 
-# production mode
+# produção
 $ pnpm run start:prod
 ```
 
 ## Test
 
 ```bash
-# unit tests
+# Testes unitários
 $ pnpm run test
 
-# e2e tests
+# Testes e2e
 $ pnpm run test:e2e
 
-# test coverage
+# Coverage dos testes
 $ pnpm run test:cov
 ```
 
-## Support
+## Configuração
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+1. Crie um arquivo `.env` na raiz do diretório do projeto.
+2. Copie as variáveis de ambiente do arquivo `.env.sample`:
+3. Preencha com os dados de conexão do seu PostgreSQL e com sua chave da API SendGrid
 
-## Stay in touch
+## Uso
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Para iniciar a aplicação, execute o seguinte comando:
 
-## License
+```
+npm run start:dev
+```
 
-Nest is [MIT licensed](LICENSE).
+Isso iniciará o servidor NestJS e o deixará pronto para lidar com as requisições da API.
+
+## Envio de E-mails
+
+Para enviar um e-mail usando a API do SendGrid, faça uma requisição POST para o endpoint apropriado, fornecendo os dados necessários.
+
+## Banco de Dados
+
+Este projeto utiliza o TypeORM com o PostgreSQL como banco de dados. Certifique-se de ter um servidor PostgreSQL em execução e atualize as configurações de conexão no arquivo `.env`.
