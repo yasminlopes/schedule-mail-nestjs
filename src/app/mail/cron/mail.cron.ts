@@ -50,7 +50,6 @@ export class MailCron {
         ],
       };
       await this.sendgridService.sendEmail(data);
-      console.log('🚀 ~ file: mail.cron.ts:53 ~ MailCron ~ handler ~ data:', data);
       await this.mailService.updateStatus(mail.id, MailStatusEnum.SENT);
       this.logger.log('E-mail enviado com sucesso!');
     }
