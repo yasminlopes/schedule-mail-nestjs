@@ -2,8 +2,8 @@ import { Injectable, Logger } from '@nestjs/common';
 import { Cron, CronExpression } from '@nestjs/schedule';
 import { MailService } from '../services/mail/mail.service';
 import { MailStatusEnum } from '../enums/mail-status.enum';
-import { SendgridService } from 'src/app/sendgrid/services/sendgrid.service';
-import { SendEmailInterface } from 'src/app/sendgrid/interfaces/send-email.interface';
+import { SendEmailInterface } from '../../sendgrid/interfaces/send-email.interface';
+import { SendgridService } from '../../sendgrid/services/sendgrid.service';
 
 @Injectable()
 export class MailCron {
