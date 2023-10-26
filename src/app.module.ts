@@ -3,6 +3,7 @@ import { SendgridModule } from './app/sendgrid/sendgrid.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { MailModule } from './app/mail/mail.module';
+import { ScheduleModule } from '@nestjs/schedule';
 @Module({
   imports: [
     SendgridModule,
@@ -18,6 +19,7 @@ import { MailModule } from './app/mail/mail.module';
       entities: [__dirname + '/**/*.entity{.js,.ts}'],
     }),
     MailModule,
+    ScheduleModule.forRoot(),
   ],
   controllers: [],
   providers: [],
