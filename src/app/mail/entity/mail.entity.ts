@@ -1,5 +1,5 @@
 import { Column, CreateDateColumn, DeleteDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
-import { MailStatus } from '../enums/mail-status.enum';
+import { MailStatusEnum } from '../enums/mail-status.enum';
 
 @Entity({ name: 'mails' })
 export class MailEntity {
@@ -23,7 +23,7 @@ export class MailEntity {
   @Column({ type: 'text', nullable: true })
   public body: string;
 
-  @Column({ default: MailStatus.PENDING })
+  @Column({ default: MailStatusEnum.PENDING })
   public status: string;
 
   @CreateDateColumn({ name: 'created_at' })
