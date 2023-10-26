@@ -3,6 +3,8 @@ import { Repository } from 'typeorm';
 import { MailEntity } from '../../entity/mail.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { SaveMailDto } from '../../dto/save-mail.dto';
+import { FindAllMailDto } from '../../dto/find-all-mail.dto';
+import { MailStatusEnum } from '../../enums/mail-status.enum';
 
 @Injectable()
 export class MailService {
@@ -29,4 +31,10 @@ export class MailService {
     return query.getMany();
   }
 
+  public async updateStatus(id: string, status: MailStatusEnum): Promise<void> {
+    const mail = await this.mailRepository.findOneOrFail(id);
+    this.mailRepository.merge(mail, { status });
+
+    await this.mailRepository.save(mail);
+  }
 }
